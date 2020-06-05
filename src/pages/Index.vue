@@ -377,12 +377,48 @@
 
               <div class="col-md-6 col-md-6 col-xs-12 col-sm-12 text-center flex flex-center">
                 <q-img src="statics/images/sketch_2.jpg"
-                v-bind:class="{'sketch_desktop': $q.platform.is.desktop, 'sketch_mobile': $q.platform.is.ipad || $q.platform.is.mobile}">
+                       v-bind:class="{'sketch_desktop': $q.platform.is.desktop, 'sketch_mobile': $q.platform.is.ipad || $q.platform.is.mobile}">
                 </q-img>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div id="contact_us">
+      <div style="background-color: rgba(0, 0, 0, 0.68) !important;">
+        <form
+          action="https://formspree.io/mpzydoze"
+          method="POST"
+        >
+          <div class="row text-center flex flex-center q-py-lg">
+            <div class="col-md-6 col-lg-6 col-sx-12 col-sm-12 q-gutter-lg q-px-xl q-pb-none q-ma-none">
+              <q-input required v-model="name" name="name" bg-color="white" outlined label="Your Name *">
+                <template v-slot:append>
+                  <q-icon name="list" style="color:blue"/>
+                </template>
+              </q-input>
+              <q-input required v-model="email" bg-color="white" outlined label="Your Email *">
+                <template v-slot:append>
+                  <q-icon name="email" style="color:blue"/>
+                </template>
+              </q-input>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sx-12 col-sm-12 q-gutter-lg q-px-xl q-pb-none q-ma-none">
+              <q-input required v-model="message" name="message" class="" type="textarea" bg-color="white" outlined
+                       label="Your Message *">
+                <template v-slot:append>
+                  <q-icon name="comment" style="color:blue"/>
+                </template>
+              </q-input>
+            </div>
+          </div>
+          <div class="row flex flex-center text-center q-pb-xl q-mt-md">
+            <div class="col-md-12 col-lg-12 col-sx-12 col-sm-12">
+              <q-btn type="submit" size="lg" style="background:blue;color: white" label="Send Message"/>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;border-top: 2px solid blue">
@@ -412,7 +448,14 @@
 
 <script>
     export default {
-        name: 'PageIndex'
+        name: 'PageIndex',
+        data() {
+            return {
+                name: "",
+                email: "",
+                message: ""
+            }
+        }
     }
 </script>
 
@@ -454,15 +497,23 @@
     text-decoration: underline !important;
   }
 
-  .sketch_desktop{
+  .sketch_desktop {
     width: 450px;
     height: 620px;
     border: 20px solid #30313b;
   }
 
-  .sketch_mobile{
+  .sketch_mobile {
     width: 100%;
-    height: 100% !important;	
+    height: 100% !important;
     border: 20px solid #30313b;
+  }
+
+  #contact_us {
+    background: url(/statics/images/contact_us.jpg);
+    background-size: cover;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 </style>
