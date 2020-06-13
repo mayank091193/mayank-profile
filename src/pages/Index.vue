@@ -1,11 +1,18 @@
 <template>
-  <q-layout view="hhh lpR fFf">
+  <q-layout view="lHh lpr lFf">
     <div v-bind:class="{'main': $q.platform.is.desktop, 'mobile_main': $q.platform.is.ipad || $q.platform.is.mobile}"
          class="full-height" style="background-color:rgba(0, 0, 0, 0.7);">
 
       <q-header class="q-py-sm" style="background-color:rgba(0, 0, 0, 0.7);">
         <q-toolbar class="text-h4">
-
+		<q-space ></q-space>
+	      	<q-tabs v-model="selected_tab" shrink>
+		<q-tab :style= "[selected_tab == 't_0' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_about_me');" style="width:120px;min-height:auto !important;color: white" label="About Me" />
+		<q-tab :style= "[selected_tab == 't_1' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_projects');" style="width:120px;min-height:auto !important;color: white" label="Projects" />
+		<q-tab :style= "[selected_tab == 't_2' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_sponsors');" style="width:120px;min-height:auto !important;color: white" label="Sponsors" />
+		<q-tab :style= "[selected_tab == 't_3' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_sketches');" style="width:120px;min-height:auto !important;color: white" label="Sketches" />
+		<q-tab :style= "[selected_tab == 't_4' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_contact_me');" style="width:120px;min-height:auto !important;color: white" label="Contact Me" />
+		</q-tabs>
         </q-toolbar>
       </q-header>
       <div class="full-height full-width flex flex-center text-center"
@@ -25,7 +32,7 @@
       </div>
     </div>
 
-    <div style="background-color:#33495e" class="">
+    <div style="background-color:#33495e" id="id_about_me">
       <div class="row">
         <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
           <div style="background-color:#ea4946" class="q-pa-md text-center text-white text-weight-bolder text-h4">
@@ -71,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div style="background-color:#2b5873" class="">
+    <div style="background-color:#2b5873" id="id_projects">
       <div class="row q-px-xl">
         <div class="text-h4 text-center text-white q-py-sm q-my-md full-width"
              style="border-top:3px solid #bdbdbd;border-bottom: 3px solid #bdbdbd;">MY OPEN SOURCE PROJECTS
@@ -339,7 +346,7 @@
         </div>
       </div>
     </div>
-    <div style="background-color:#14104e" class="">
+    <div style="background-color:#14104e" id="id_sponsors">
       <div class="row row q-px-xl">
         <div class="text-h4 text-center text-white q-py-sm q-my-md full-width"
              style="border-top:3px solid #bdbdbd;border-bottom: 3px solid #bdbdbd;">Bronze Sponsor(S)
@@ -359,7 +366,7 @@
         </div>
       </div>
     </div>
-    <div style="background-color:#206b73" class="">
+    <div style="background-color:#206b73" id="id_sketches">
       <div class="row row q-px-xl">
         <div class="text-h4 text-center text-white q-py-sm q-my-md full-width"
              style="border-top:3px solid #bdbdbd;border-bottom: 3px solid #bdbdbd;">My Sketches
@@ -421,7 +428,7 @@
         </form>
       </div>
     </div>
-    <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;border-top: 2px solid blue">
+    <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;border-top: 2px solid blue" id="id_contact_me">
       <div class="q-pa-sm q-gutter-sm">
         <q-btn target="_blank" style="border: 2px solid blue" round type="a" href="https://twitter.com/mayank91193"
                glossy
@@ -447,15 +454,27 @@
 </template>
 
 <script>
+import { scroll } from 'quasar'
+const { getScrollTarget, setScrollPosition } = scroll
     export default {
         name: 'PageIndex',
         data() {
             return {
                 name: "",
                 email: "",
-                message: ""
+                message: "",
+		selected_tab: 't_0',
             }
-        }
+        },
+	methods: {
+		scrollToElement (id) {
+		    let el = document.getElementById(id)
+		    const target = getScrollTarget(el)
+		    const offset = el.offsetTop - 65
+		    const duration = 800
+		    setScrollPosition(target, offset, duration)
+		  }
+	}
     }
 </script>
 
@@ -516,4 +535,8 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
+
+  .custom_tab {
+	width: 130px;
+	}
 </style>
