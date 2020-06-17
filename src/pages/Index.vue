@@ -5,18 +5,29 @@
 
       <q-header class="q-py-sm" style="background-color:rgba(0, 0, 0, 0.7);">
         <q-toolbar class="text-h4">
-		<q-space ></q-space>
-	      	<q-tabs v-model="selected_tab" shrink>
-		<q-tab :style= "[selected_tab == 't_0' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_about_me');" style="width:120px;min-height:auto !important;color: white" label="About Me" />
-		<q-tab :style= "[selected_tab == 't_1' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_projects');" style="width:120px;min-height:auto !important;color: white" label="Projects" />
-		<q-tab :style= "[selected_tab == 't_2' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_sponsors');" style="width:120px;min-height:auto !important;color: white" label="Sponsors" />
-		<q-tab :style= "[selected_tab == 't_3' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_sketches');" style="width:120px;min-height:auto !important;color: white" label="Sketches" />
-		<q-tab :style= "[selected_tab == 't_4' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab" @click="scrollToElement('id_contact_me');" style="width:120px;min-height:auto !important;color: white" label="Contact Me" />
-		</q-tabs>
+          <q-space></q-space>
+          <q-tabs v-model="selected_tab" shrink>
+            <q-tab :style="[selected_tab == 't_0' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+                   @click="scrollToElement('id_about_me')" style="width:120px;min-height:auto !important;color: white"
+                   label="About Me"/>
+            <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+                   @click="scrollToElement('id_projects')" style="width:120px;min-height:auto !important;color: white"
+                   label="Projects"/>
+            <q-tab :style="[selected_tab == 't_2' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+                   @click="scrollToElement('id_sponsors')" style="width:120px;min-height:auto !important;color: white"
+                   label="Sponsors"/>
+            <q-tab :style="[selected_tab == 't_3' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+                   @click="scrollToElement('id_sketches')" style="width:120px;min-height:auto !important;color: white"
+                   label="Sketches"/>
+            <q-tab :style="[selected_tab == 't_4' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+                   @click="scrollToElement('id_contact_me')"
+                   style="width:120px;min-height:auto !important;color: white" label="Contact Me"/>
+          </q-tabs>
         </q-toolbar>
       </q-header>
-      <div class="full-height full-width flex flex-center text-center"
-           style="background-color: rgba(0, 0, 0, 0.68) !important;">
+      <section>
+        <div class="full-height full-width flex flex-center text-center"
+           style="background-color: rgba(0, 0, 0, 0.68) !important;z-index:0;height: 100vh !important;">
         <div class="">
           <div class="text-h6 text-grey-5">WELCOME TO MY PAGE</div>
           <div class="text-h2 text-white q-py-sm q-my-md"
@@ -30,6 +41,8 @@
           </div>
         </div>
       </div>
+        <canvas id="canvas1" style="height: 100%;width:100%;"></canvas>
+      </section>
     </div>
 
     <div style="background-color:#33495e" id="id_about_me">
@@ -344,6 +357,10 @@
             </q-card-actions>
           </q-card>
         </div>
+        <div class="col-md-12 col-md-12 col-xs-12 col-sm-12 q-mb-xl flex flex-center">
+          <iframe src="https://github.com/sponsors/mayank091193/card" title="Sponsor Mayank" height="171" width="700"
+                  style="border: 0;"></iframe>
+        </div>
       </div>
     </div>
     <div style="background-color:#14104e" id="id_sponsors">
@@ -366,32 +383,35 @@
         </div>
       </div>
     </div>
-    <div style="background-color:#206b73" id="id_sketches">
-      <div class="row row q-px-xl">
-        <div class="text-h4 text-center text-white q-py-sm q-my-md full-width"
-             style="border-top:3px solid #bdbdbd;border-bottom: 3px solid #bdbdbd;">My Sketches
-        </div>
-        <div class="col-md-12 col-md-12 col-xs-12 col-sm-12 q-mb-xl">
-          <div class="q-pa-md">
-            <div class="q-col-gutter-md row">
-              <div class="col-md-6 col-md-6 col-xs-12 col-sm-12 text-center flex flex-center">
-                <q-img
-                  src="statics/images/sketch_1.jpg"
-                  v-bind:class="{'sketch_desktop': $q.platform.is.desktop, 'sketch_mobile': $q.platform.is.ipad || $q.platform.is.mobile}"
-                >
-                </q-img>
-              </div>
+    <section>
+      <div style="background-color:#206b73;z-index:0;" class="content" id="id_sketches">
+        <div class="row row q-px-xl">
+          <div class="text-h4 text-center text-white q-py-sm q-my-md full-width"
+               style="border-top:3px solid #bdbdbd;border-bottom: 3px solid #bdbdbd;">My Sketches
+          </div>
+          <div class="col-md-12 col-md-12 col-xs-12 col-sm-12 q-mb-xl">
+            <div class="q-pa-md">
+              <div class="q-col-gutter-md row">
+                <div class="col-md-6 col-md-6 col-xs-12 col-sm-12 text-center flex flex-center">
+                  <q-img
+                    src="statics/images/sketch_1.jpg"
+                    v-bind:class="{'sketch_desktop': $q.platform.is.desktop, 'sketch_mobile': $q.platform.is.ipad || $q.platform.is.mobile}"
+                  >
+                  </q-img>
+                </div>
 
-              <div class="col-md-6 col-md-6 col-xs-12 col-sm-12 text-center flex flex-center">
-                <q-img src="statics/images/sketch_2.jpg"
-                       v-bind:class="{'sketch_desktop': $q.platform.is.desktop, 'sketch_mobile': $q.platform.is.ipad || $q.platform.is.mobile}">
-                </q-img>
+                <div class="col-md-6 col-md-6 col-xs-12 col-sm-12 text-center flex flex-center">
+                  <q-img src="statics/images/sketch_2.jpg"
+                         v-bind:class="{'sketch_desktop': $q.platform.is.desktop, 'sketch_mobile': $q.platform.is.ipad || $q.platform.is.mobile}">
+                  </q-img>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <canvas id="canvas2" style="height: 100%;width:100%;"></canvas>
+    </section>
     <div id="contact_us">
       <div style="background-color: rgba(0, 0, 0, 0.68) !important;">
         <form
@@ -428,7 +448,8 @@
         </form>
       </div>
     </div>
-    <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;border-top: 2px solid blue" id="id_contact_me">
+    <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;border-top: 2px solid blue"
+               id="id_contact_me">
       <div class="q-pa-sm q-gutter-sm">
         <q-btn target="_blank" style="border: 2px solid blue" round type="a" href="https://twitter.com/mayank91193"
                glossy
@@ -454,8 +475,10 @@
 </template>
 
 <script>
-import { scroll } from 'quasar'
-const { getScrollTarget, setScrollPosition } = scroll
+
+    import {scroll} from 'quasar'
+
+    const {getScrollTarget, setScrollPosition} = scroll
     export default {
         name: 'PageIndex',
         data() {
@@ -463,18 +486,40 @@ const { getScrollTarget, setScrollPosition } = scroll
                 name: "",
                 email: "",
                 message: "",
-		selected_tab: 't_0',
+                selected_tab: 't_0',
             }
         },
-	methods: {
-		scrollToElement (id) {
-		    let el = document.getElementById(id)
-		    const target = getScrollTarget(el)
-		    const offset = el.offsetTop - 65
-		    const duration = 800
-		    setScrollPosition(target, offset, duration)
-		  }
-	}
+        methods: {
+            scrollToElement(id) {
+                let el = document.getElementById(id)
+                const target = getScrollTarget(el)
+                const offset = el.offsetTop - 65
+                const duration = 800
+                setScrollPosition(target, offset, duration)
+            }
+        },
+        mounted: function () {
+            let canvas1Settings = {
+                "target": "canvas1",
+                "max": "99",
+                "animate": true,
+                "props": ["circle", "square", "triangle", "line"],
+                "colors": [[165, 104, 246], [230, 61, 135], [0, 199, 228], [253, 214, 126]],
+                "clock": "9"
+            };
+            let canvas1 = new ConfettiGenerator(canvas1Settings);
+            canvas1.render();
+            let canvas2Settings = {
+                "target": "canvas2",
+                "max": "120",
+                "animate": true,
+                "props": ["circle", "square", "triangle", "line"],
+                "colors": [[165, 104, 246], [230, 61, 135], [0, 199, 228], [253, 214, 126]],
+                "clock": "20"
+            };
+            let canvas2 = new ConfettiGenerator(canvas2Settings);
+            canvas2.render();
+        }
     }
 </script>
 
@@ -537,6 +582,26 @@ const { getScrollTarget, setScrollPosition } = scroll
   }
 
   .custom_tab {
-	width: 130px;
-	}
+    width: 130px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    position: relative;
+  }
+
+  section > * {
+    z-index: 9;
+    position: relative;
+    top: 0;
+  }
+
+  section > canvas {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+  }
 </style>
