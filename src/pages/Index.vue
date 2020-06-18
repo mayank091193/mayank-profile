@@ -7,19 +7,19 @@
         <q-toolbar class="text-h4">
           <q-space></q-space>
           <q-tabs v-model="selected_tab" shrink>
-            <q-tab :style="[selected_tab == 't_0' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+            <q-tab :style="[selected_tab == 't_0' ? {backgroundColor: 'green'} : {}]" class="q-mr-sm q-py-xs custom_tab"
                    @click="scrollToElement('id_about_me')" style="width:120px;min-height:auto !important;color: white"
                    label="About Me"/>
-            <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+            <q-tab :style="[selected_tab == 't_1' ? {backgroundColor: 'green'} : {}]" class="q-mr-sm q-py-xs custom_tab"
                    @click="scrollToElement('id_projects')" style="width:120px;min-height:auto !important;color: white"
                    label="Projects"/>
-            <q-tab :style="[selected_tab == 't_2' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+            <q-tab :style="[selected_tab == 't_2' ? {backgroundColor: 'green'} : {}]" class="q-mr-sm q-py-xs custom_tab"
                    @click="scrollToElement('id_sponsors')" style="width:120px;min-height:auto !important;color: white"
                    label="Sponsors"/>
-            <q-tab :style="[selected_tab == 't_3' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+            <q-tab :style="[selected_tab == 't_3' ? {backgroundColor: 'green'} : {}]" class="q-mr-sm q-py-xs custom_tab"
                    @click="scrollToElement('id_sketches')" style="width:120px;min-height:auto !important;color: white"
                    label="Sketches"/>
-            <q-tab :style="[selected_tab == 't_4' ? {backgroundColor: 'blue'} : {}]" class="q-mr-sm q-py-xs custom_tab"
+            <q-tab :style="[selected_tab == 't_4' ? {backgroundColor: 'green'} : {}]" class="q-mr-sm q-py-xs custom_tab"
                    @click="scrollToElement('id_contact_me')"
                    style="width:120px;min-height:auto !important;color: white" label="Contact Me"/>
           </q-tabs>
@@ -422,12 +422,12 @@
             <div class="col-md-6 col-lg-6 col-sx-12 col-sm-12 q-gutter-lg q-px-xl q-pb-none q-ma-none">
               <q-input required v-model="name" name="name" bg-color="white" outlined label="Your Name *">
                 <template v-slot:append>
-                  <q-icon name="list" style="color:blue"/>
+                  <q-icon name="list" style="color:green"/>
                 </template>
               </q-input>
               <q-input required v-model="email" bg-color="white" outlined label="Your Email *">
                 <template v-slot:append>
-                  <q-icon name="email" style="color:blue"/>
+                  <q-icon name="email" style="color:green"/>
                 </template>
               </q-input>
             </div>
@@ -435,37 +435,37 @@
               <q-input required v-model="message" name="message" class="" type="textarea" bg-color="white" outlined
                        label="Your Message *">
                 <template v-slot:append>
-                  <q-icon name="comment" style="color:blue"/>
+                  <q-icon name="comment" style="color:green"/>
                 </template>
               </q-input>
             </div>
           </div>
           <div class="row flex flex-center text-center q-pb-xl q-mt-md">
             <div class="col-md-12 col-lg-12 col-sx-12 col-sm-12">
-              <q-btn type="submit" size="lg" style="background:blue;color: white" label="Send Message"/>
+              <q-btn type="submit" size="lg" style="background:green;color: white" label="Send Message"/>
             </div>
           </div>
         </form>
       </div>
     </div>
-    <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;border-top: 2px solid blue"
+    <q-toolbar class="flex flex-center text-white" style="background-color: #1c1b21;border-top: 2px solid green"
                id="id_contact_me">
       <div class="q-pa-sm q-gutter-sm">
-        <q-btn target="_blank" style="border: 2px solid blue" round type="a" href="https://twitter.com/mayank91193"
+        <q-btn target="_blank" style="border: 2px solid green" round type="a" href="https://twitter.com/mayank91193"
                glossy
                icon="fab fa-twitter"/>
-        <q-btn target="_blank" style="border: 2px solid blue" round type="a"
+        <q-btn target="_blank" style="border: 2px solid green" round type="a"
                href="https://github.com/mayank091193"
                glossy
                icon="fab fa-github"/>
-        <q-btn style="border: 2px solid blue" round type="a" href="mailto:mayank091193@gmail.com"
+        <q-btn style="border: 2px solid green" round type="a" href="mailto:mayank091193@gmail.com"
                glossy
                icon="email"/>
-        <q-btn target="_blank" style="border: 2px solid blue;" round type="a"
+        <q-btn target="_blank" style="border: 2px solid green;" round type="a"
                href="https://github.com/sponsors/mayank091193"
                glossy
                icon="fas fa-heart"/>
-        <q-btn target="_blank" style="border: 2px solid blue;" round type="a"
+        <q-btn target="_blank" style="border: 2px solid green;" round type="a"
                href="https://stackoverflow.com/users/4763038/mayank-patel"
                glossy
                icon="fab fa-stack-overflow"/>
