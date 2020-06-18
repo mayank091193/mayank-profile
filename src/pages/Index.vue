@@ -383,8 +383,8 @@
         </div>
       </div>
     </div>
-    <section>
-      <div style="background-color:#206b73;z-index:0;" class="content" id="id_sketches">
+    <section id="id_sketches">
+      <div style="background-color:#206b73;z-index:0;" class="content">
         <div class="row row q-px-xl">
           <div class="text-h4 text-center text-white q-py-sm q-my-md full-width"
                style="border-top:3px solid #bdbdbd;border-bottom: 3px solid #bdbdbd;">My Sketches
