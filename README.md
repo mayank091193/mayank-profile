@@ -47,5 +47,38 @@ quasar dev
 quasar build
 ```
 
+Do reach out to me at "mayank091193@gmail.com" for queries.
+
+## Screens UI
+**Home**
+<p float="left">
+	<kbd>
+<img src="assets/homepage.png" border="1" alt="Home"
+	title="Home"  />
+		</kbd>
+</p>
+
+**Projects**
+<p float="left">
+	<kbd>
+<img src="assets/projects.png" border="1" alt="Projects"
+	title="Portfolio"  />	
+	</kbd>
+</p>
+
+**Sketches**
+<p float="left">
+	<kbd>
+<img src="assets/sketches.png" border="1" alt="Sketches"
+	title="Pricing"  />
+	</kbd>
+</p>
+
+
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
