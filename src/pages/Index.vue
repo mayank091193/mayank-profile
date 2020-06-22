@@ -55,7 +55,7 @@
             <div style="background-color: rgba(0, 0, 0, 0.68) !important;">
               <q-img style="height:300px"
                      class="col-5"
-                     src="/statics/images/my_2.png"
+                     src="/statics/images/my_2.jpg"
               />
             </div>
           </div>
