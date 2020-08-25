@@ -425,7 +425,7 @@
                   <q-icon name="list" style="color:green"/>
                 </template>
               </q-input>
-              <q-input required v-model="email" bg-color="white" outlined label="Your Email *">
+              <q-input type="email" required v-model="email" name="_replyto" bg-color="white" outlined label="Your Email *">
                 <template v-slot:append>
                   <q-icon name="email" style="color:green"/>
                 </template>
