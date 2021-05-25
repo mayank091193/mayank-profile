@@ -41,7 +41,6 @@
           </div>
         </div>
       </div>
-        <canvas id="canvas1" style="height: 100%;width:100%;"></canvas>
       </section>
     </div>
 
@@ -372,11 +371,29 @@
           <q-btn target="_blank" type="a" href="https://github.com/ex-kimura">
             <q-card class="sponsor-card q-my-sm">
               <q-card-section class="q-pb-none">
-                <div class="text-h6 text-center text-grey-9">ex-kimura</div>
+                <div class="text-h6 text-center text-capitalize text-grey-9">ex-kimura</div>
               </q-card-section>
               <q-card-section class="flex flex-center">
                 <img class="" style="height: 185px;width: 185px;"
                      src="https://avatars.githubusercontent.com/ex-kimura">
+              </q-card-section>
+            </q-card>
+          </q-btn>
+        </div>
+      </div>
+      <div class="row row q-px-xl">
+        <div class="text-h4 text-center text-white q-py-sm q-my-md full-width"
+             style="border-top:3px solid #bdbdbd;border-bottom: 3px solid #bdbdbd;">Sponsor(S)
+        </div>
+        <div class="col-md-12 col-md-12 col-xs-12 col-sm-12 q-mb-xl flex flex-center">
+          <q-btn target="_blank" type="a" href="https://github.com/RawlsOn">
+            <q-card class="sponsor-card q-my-sm">
+              <q-card-section class="q-pb-none">
+                <div class="text-h6 text-center text-capitalize text-grey-9">RawlsOn</div>
+              </q-card-section>
+              <q-card-section class="flex flex-center">
+                <img class="" style="height: 185px;width: 185px;"
+                     src="https://avatars.githubusercontent.com/u/53962027">
               </q-card-section>
             </q-card>
           </q-btn>
@@ -499,16 +516,6 @@
             }
         },
         mounted: function () {
-            let canvas1Settings = {
-                "target": "canvas1",
-                "max": "99",
-                "animate": true,
-                "props": ["circle", "square", "triangle", "line"],
-                "colors": [[165, 104, 246], [230, 61, 135], [0, 199, 228], [253, 214, 126]],
-                "clock": "9"
-            };
-            let canvas1 = new ConfettiGenerator(canvas1Settings);
-            canvas1.render();
             let canvas2Settings = {
                 "target": "canvas2",
                 "max": "120",
